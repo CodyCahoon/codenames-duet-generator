@@ -6,7 +6,7 @@
   "author": "Cody Cahoon <codyjcahoon@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "vanilla": "node ./src/vanilla.js",
+    "generate": "node ./src/index.js",
     "test": "jest"
   },
   "dependencies": {

@@ -11,6 +11,12 @@ A JS library to generate a random two-sided key card for Codenames Duet
 5. Both sides have 1 black tile that is green on the other
 6. Both sides have 1 black tile that is white on the other
 
+## Running
+
+| Command             | Options                                                   |
+| ------------------- | --------------------------------------------------------- |
+| `yarn run generate` | `--ramda (defaults to run in vanilla js if not provided)` |
+
 ## Example Output
 
 ```
