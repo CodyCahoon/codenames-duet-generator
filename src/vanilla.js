@@ -1,16 +1,6 @@
-// Utilities
-const randomNum = max => Math.floor(Math.random() * max);
+const Util = require('./utilities');
 
-const randomNums = size => {
-  const numbers = new Set();
-  while (numbers.size !== size) {
-    numbers.add(randomNum(size));
-  }
-  return Array.from(numbers);
-}
-
-// Implementation
-const tiles = randomNums(25);
+const tiles = Util.randomNums(25);
 
 const sideA = {
   greenTiles: tiles.slice(0, 9),
