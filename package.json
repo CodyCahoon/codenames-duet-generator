@@ -1,0 +1,14 @@
+{
+  "name": "codenames-duet-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:CodyCahoon/codenames-duet-generator.git",
+  "author": "Cody Cahoon <codyjcahoon@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "vanilla": "node ./src/vanilla.js"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1"
+  }
+}
