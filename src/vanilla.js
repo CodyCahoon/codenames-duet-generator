@@ -1,4 +1,4 @@
-const Util = require('./utilities');
+const Util = require("./utilities");
 
 const tiles = Util.randomNums(25);
 
@@ -22,23 +22,23 @@ const sideB = {
 
 const mapColor = (side, i) => {
   if (side.blackTiles.includes(i)) {
-    return 'x';
+    return "x";
   }
   if (side.greenTiles.includes(i)) {
-    return 'g';
+    return "g";
   }
-  return '-';
-}
+  return "-";
+};
 
-const grids = new Array(25).fill(null).reduce(
-  (total, _, i) => {
-    return {
-      gridA: total.gridA + mapColor(sideA, i),
-      gridB: total.gridB + mapColor(sideB, i),
-    };
-  },
-  { gridA: "", gridB: "" }
-);
+const generate = () =>
+  new Array(25).fill(null).reduce(
+    (total, _, i) => {
+      return {
+        gridA: total.gridA.concat(mapColor(sideA, i)),
+        gridB: total.gridB.concat(mapColor(sideB, i))
+      };
+    },
+    { gridA: [], gridB: [] }
+  );
 
-console.log('Side A: ' + grids.gridA);
-console.log('Side B: ' + grids.gridB);
+module.exports = { generate };

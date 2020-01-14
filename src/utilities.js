@@ -6,8 +6,8 @@ const randomNums = size => {
     numbers.add(randomNum(size));
   }
   return Array.from(numbers);
-}
+};
 
 module.exports = {
-    randomNums,
+  randomNums
 };
