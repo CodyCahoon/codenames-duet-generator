@@ -9,15 +9,21 @@ const sideA = {
 };
 
 const sideB = {
-  greenTiles: sideA.greenTiles
-    .slice(0, 3)
-    .concat(sideA.blackTiles.slice(0, 1), sideA.whiteTiles.slice(0, 5)),
-  blackTiles: sideA.greenTiles
-    .slice(3, 4)
-    .concat(sideA.blackTiles.slice(1, 2), sideA.whiteTiles.slice(5, 6)),
-  whiteTiles: sideA.greenTiles
-    .slice(4, 9)
-    .concat(sideA.blackTiles.slice(2, 3), sideA.whiteTiles.slice(6, 13))
+  greenTiles: [
+    ...sideA.greenTiles.slice(0, 3),
+    ...sideA.blackTiles.slice(0, 1), 
+    ...sideA.whiteTiles.slice(0, 5),
+  ],
+  blackTiles: [
+    ...sideA.greenTiles.slice(3, 4),
+    ...sideA.blackTiles.slice(1, 2),
+    ...sideA.whiteTiles.slice(5, 6),
+  ],
+  whiteTiles: [
+    ...sideA.greenTiles.slice(4, 9),
+    ...sideA.blackTiles.slice(2, 3),
+    ...sideA.whiteTiles.slice(6, 13),
+  ]
 };
 
 const mapColor = (side, i) => {
@@ -34,8 +40,8 @@ const generate = () =>
   new Array(25).fill(null).reduce(
     (total, _, i) => {
       return {
-        gridA: total.gridA.concat(mapColor(sideA, i)),
-        gridB: total.gridB.concat(mapColor(sideB, i))
+        gridA: [...total.gridA, mapColor(sideA, i)],
+        gridB: [...total.gridB, mapColor(sideB, i)],
       };
     },
     { gridA: [], gridB: [] }
