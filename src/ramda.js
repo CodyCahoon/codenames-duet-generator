@@ -9,21 +9,21 @@ R.compose(
         ...sideA
       },
       sideB: {
-        green: R.unnest([
-          R.slice(0, 3, sideA.green),
-          R.slice(0, 1, sideA.black),
-          R.slice(0, 5, sideA.white)
-        ]),
-        black: R.unnest([
-          R.slice(3, 4, sideA.green),
-          R.slice(1, 2, sideA.black),
-          R.slice(5, 6, sideA.white)
-        ]),
-        white: R.unnest([
-          R.slice(4, 9, sideA.green),
-          R.slice(2, 3, sideA.black),
-          R.slice(6, Infinity, sideA.white)
-        ])
+        green: [
+          ...R.slice(0, 3, sideA.green),
+          ...R.slice(0, 1, sideA.black),
+          ...R.slice(0, 5, sideA.white)
+        ],
+        black: [
+          ...R.slice(3, 4, sideA.green),
+          ...R.slice(1, 2, sideA.black),
+          ...R.slice(5, 6, sideA.white)
+        ],
+        white: [
+          ...R.slice(4, 9, sideA.green),
+          ...R.slice(2, 3, sideA.black),
+          ...R.slice(6, Infinity, sideA.white)
+        ],
       }
     };
   }),
