@@ -8,6 +8,17 @@ const randomNums = size => {
   return Array.from(numbers);
 };
 
+const mapColor = (side, i) => {
+  if (side.black.includes(i)) {
+    return "x";
+  }
+  if (side.green.includes(i)) {
+    return "g";
+  }
+  return "-";
+};
+
 module.exports = {
+  mapColor,
   randomNums
 };
